@@ -34,7 +34,7 @@ jobs:
       run: |
         poetry run python -m unittest tests.main_test
     - name: Build package
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/master'
       run: |
         poetry config pypi-token.pypi ${{ secrets.PIP_TOKEN }}
         poetry publish --build
