@@ -32,7 +32,7 @@ jobs:
         poetry install
     - name: Run UnitTests
       run: |
-        poetry run python --source ./packagesthomas -m unittest tests.main_test
+        poetry run coverage --source ./packagesthomas -m unittest tests.main_test
         poetry coverage report -m
     - name: Build package
       if: github.ref == 'refs/heads/master'
